@@ -2,13 +2,24 @@
 @import "fonts";
 @import "global";
 
+html,
 body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
   @extend %opensans-400;
   font-size: 14px;
   line-height: 1.4;
   letter-spacing: 0.03em;
   color: $color-text--main;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .container {
