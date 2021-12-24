@@ -1,0 +1,80 @@
+$color-main--dark: #63a60f;
+$color-main--light: #e0edcf;
+$color-main--lighter: #eff6e7;
+$color-title: #121212;
+$color-text--main: #505050;
+$color-text-second: #ffffff;
+$color-warning: #cf3e3b;
+$color-background: #31352b;
+
+$orange: #ff7a00;
+$yellow: #ffb800;
+
+$silver-bright: #c1c1c1;
+$silver-light: #f6f6f6;
+
+%bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+%lato-400 {
+  font-family: "Lato-Regular", sans-serif;
+  font-weight: 400;
+}
+
+%lato-700 {
+  font-family: "Lato-Bold", sans-serif;
+  font-weight: 700;
+}
+
+%opensans-300 {
+  font-family: "OpenSans-Light", sans-serif;
+  font-weight: 300;
+}
+
+%opensans-400 {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-weight: 400;
+}
+
+%opensans-600 {
+  font-family: "OpenSans-SemiBold", sans-serif;
+  font-weight: 600;
+}
+
+%opensans-700 {
+  font-family: "OpenSans-Bold", sans-serif;
+  font-weight: 700;
+}
+
+%roboto-400 {
+  font-family: "Roboto-Regular", sans-serif;
+  font-weight: 400;
+}
+
+%roboto-500 {
+  font-family: "Roboto-Medium", sans-serif;
+  font-weight: 500;
+}
+
+%ruda-400 {
+  font-family: "Ruda-Regular", sans-serif;
+  font-weight: 400;
+}
+
+%ruda-900 {
+  font-family: "Ruda-Black", sans-serif;
+  font-weight: 900;
+}
+
+%ruda-700 {
+  font-family: "Ruda-Bold", sans-serif;
+  font-weight: 700;
+}
+
+%ruda-600 {
+  font-family: "Ruda-SemiBold", sans-serif;
+  font-weight: 600;
+}
