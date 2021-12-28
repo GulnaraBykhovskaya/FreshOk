@@ -162,6 +162,7 @@ body {
   font-size: 14px;
   color: $color-main--dark;
   transition: background-color, border-radius 0.3s;
+  z-index: 1;
 
   &:hover {
     background-color: $color-main--light;
@@ -423,6 +424,7 @@ body {
     margin-right: 68px;
   }
 }
+
 .feedback {
   &__form {
     display: flex;
@@ -462,6 +464,7 @@ body {
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 }
+
 .contacts {
   &__link {
     color: inherit;
@@ -475,6 +478,7 @@ body {
     margin-bottom: 18px;
   }
 }
+
 .social {
   display: flex;
 
@@ -520,6 +524,7 @@ body {
     margin-right: 12px;
   }
 }
+
 .payment {
   &__list {
     display: flex;
@@ -584,22 +589,92 @@ body {
   }
 }
 
-.slick-arrow {
-  position: absolute;
-  top: 50%;
-  width: 60px;
-  height: 60px;
-  padding: 14px 20px;
-  transform: translateY(-50%);
-  background-color: rgba(#ffffff, 0.8);
-  border-radius: 6px;
+.slick {
+  &-arrow {
+    top: 50%;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    padding: 14px 20px;
+    transform: translateY(-50%);
+    background-color: rgba(#ffffff, 0.8);
+    border-radius: 6px;
+    transition: all 0.3s;
+  }
+
+  &-arrow:focus {
+    box-shadow: 0px 0px 0px 3px #b1d387;
+  }
+
+  &-arrow:hover {
+    background-color: $color-main--light;
+    // fill: $color-main--dark;
+  }
+
+  &-prev {
+    left: 60px;
+    z-index: 1;
+  }
+
+  &-next {
+    right: 60px;
+  }
+
+  &-track {
+    height: 583px;
+  }
 }
-.slick-prev {
-  left: 60px;
-  z-index: 1;
-}
-.slick-next {
-  right: 60px;
+
+.service {
+  background-color: $silver-light;
+  &__wrap {
+    padding: 48px 186px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 6px;
+    font-size: 16px;
+    @extend %opensans-600;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 74px;
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    @extend %bg;
+  }
+
+  &__item--shipment::before {
+    background-image: url("../images/icons/shipment.svg");
+  }
+
+  &__item--return::before {
+    background-image: url("../images/icons/return.svg");
+  }
+
+  &__item--support::before {
+    background-image: url("../images/icons/support.svg");
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 65px;
+  }
+
+  &__title {
+    font-size: 16px;
+    @extend %opensans-600;
+    color: $color-title;
+  }
 }
 
 @import "media";
