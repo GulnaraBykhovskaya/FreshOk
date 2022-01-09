@@ -33,7 +33,7 @@ body {
   background-color: $color-main--dark;
   border-radius: 6px;
   color: $color-text-second;
-  transition: all 0.3s;
+  transition: box-shadow, background-color 0.3s;
 
   &:focus {
     box-shadow: 0px 0px 0px 4px $color-main--light;
@@ -175,12 +175,13 @@ body {
     transform: translateY(0);
   }
 
-  &:hover button {
+  &:hover .catalog__btn {
     transform: rotate(180deg);
   }
 
   &__burger {
     position: absolute;
+    top: 50%;
     left: 18px;
     display: block;
     height: 1px;
@@ -230,13 +231,12 @@ body {
     transform: translateY(-150%);
   }
 
-  // &__item {
-  //   padding: 15px 24px;
-  // }
-
-  &__item:hover {
-    border-left: 3px solid $color-main--dark;
-    color: $color-main--dark;
+  &__item {
+    transition: border-left color 0.3s;
+    &:hover {
+      border-left: 3px solid $color-main--dark;
+      color: $color-main--dark;
+    }
   }
 
   &__item:not(:last-child) {
@@ -280,6 +280,12 @@ body {
     height: 50px;
     background-color: $color-text-second;
     border-radius: 6px 0 0 6px;
+    transition: border-radius, box-shadow 0.3s;
+
+    &:focus {
+      box-shadow: 0px 0px 0px 3px $color-main--lighter;
+      border-radius: 6px;
+    }
   }
 
   &__button {
@@ -361,7 +367,7 @@ body {
     height: 50px;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 3px;
-    transition: all 0.3s;
+    transition: background-color, opacity, box-shadow 0.3s;
   }
 
   &__link:hover:before {
@@ -412,7 +418,6 @@ body {
     top: 20px;
     right: 13px;
     padding: 13px;
-    background-image: url("../images/icons/close.svg");
     background-position: center center;
     background-repeat: no-repeat;
     width: 50px;
@@ -420,6 +425,17 @@ body {
     border-radius: 3px;
     transition: background-color 0.3s;
     &:hover {
+      background-color: $color-main--light;
+      path {
+        fill: $color-main--dark;
+      }
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 3px $color-main--lighter;
+    }
+
+    &:active {
       background-color: rgba(193, 193, 193, 0.3);
     }
   }
@@ -437,6 +453,7 @@ body {
     line-height: 1.2;
     letter-spacing: 0.03em;
     margin-bottom: 12px;
+    transition: border-bottom 0.3s;
     &:hover {
       border-bottom: 1px solid #000000;
     }
@@ -471,15 +488,24 @@ body {
     position: absolute;
     top: 12px;
     right: 12px;
-    padding: 6px;
-    background-image: url("../images/icons/closemini.svg");
     background-position: center center;
     background-repeat: no-repeat;
     width: 24px;
     height: 24px;
     border-radius: 3px;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
     &:hover {
+      background-color: $color-main--light;
+      path {
+        fill: $color-main--dark;
+      }
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 3px $color-main--lighter;
+    }
+
+    &:active {
       background-color: rgba(193, 193, 193, 0.3);
     }
   }
@@ -498,6 +524,7 @@ body {
     display: block;
     margin-bottom: 5px;
   }
+
   &__cost {
     line-height: 1;
     font-size: 20px;
@@ -569,6 +596,10 @@ body {
 
   &__link {
     color: inherit;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   &__item:not(:last-child) {
@@ -598,6 +629,11 @@ body {
     height: 40px;
     width: 180px;
     border-radius: 6px 0 0 6px;
+    transition: border-radius, box-shadow 0.3s;
+    &:focus {
+      box-shadow: 0px 0px 0px 3px $color-main--lighter;
+      border-radius: 6px;
+    }
   }
 
   &__btn {
@@ -608,7 +644,7 @@ body {
     text-transform: uppercase;
     font-size: 12px;
     color: inherit;
-    transition: all 0.3s;
+    transition: box-shadow, background-color, color 0.3s;
   }
 
   &__btn:focus {
@@ -628,6 +664,10 @@ body {
 .contacts {
   &__link {
     color: inherit;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   &__item:not(:last-child) {
@@ -646,39 +686,22 @@ body {
     display: block;
     width: 32px;
     height: 32px;
-    @extend %bg;
     border-radius: 3px;
     transition: all 0.3s;
-
-    &--facebook {
-      // width: 16px;
-      background-image: url("../images/icons/facebook.svg");
+    &:focus {
+      box-shadow: 0px 0px 0px 3px $color-main--light;
     }
 
-    &--youtube {
-      background-image: url("../images/icons/youtube.svg");
+    &:hover {
+      opacity: 0.7;
     }
 
-    &--telegram {
-      background-image: url("../images/icons/telegram.svg");
-    }
-
-    &--instagram {
-      background-image: url("../images/icons/instagram.svg");
+    &:active {
+      path {
+        fill: $color-main--light;
+      }
     }
   }
-
-  &__link:focus {
-    box-shadow: 0px 0px 0px 3px $color-main--light;
-  }
-
-  &__link:hover {
-    opacity: 0.7;
-  }
-
-  // &__link:active {
-  //   fill: $color-main--light;
-  // }
 
   &__item:not(:last-child) {
     margin-right: 12px;
@@ -697,6 +720,10 @@ body {
   &__link {
     display: block;
     height: 29px;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 0.7;
+    }
 
     &--visa {
       width: 93px;
@@ -759,16 +786,15 @@ body {
     transform: translateY(-50%);
     background-color: rgba(#ffffff, 0.8);
     border-radius: 6px;
-    transition: all 0.3s;
-  }
+    transition: background-color, box-shadow 0.3s;
 
-  &-arrow:focus {
-    box-shadow: 0px 0px 0px 3px #b1d387;
-  }
+    &:focus {
+      box-shadow: 0px 0px 0px 3px #b1d387;
+    }
 
-  &-arrow:hover {
-    background-color: $color-main--light;
-    // fill: $color-main--dark;
+    &:hover {
+      background-color: $color-main--light;
+    }
   }
 
   &-prev {
@@ -827,7 +853,7 @@ body {
   }
 
   &__item:not(:last-child) {
-    margin-right: 65px;
+    margin-right: 52px;
   }
 
   &__title {
@@ -864,7 +890,7 @@ body {
     font-size: 15px;
     text-transform: uppercase;
     border-radius: 3px;
-    transition: all 0.3s;
+    transition: box-shadow, color, border-bottom 0.3s;
 
     &:focus {
       box-shadow: 0px 0px 0px 3px $color-main--light;
@@ -889,7 +915,7 @@ body {
   &__image-box {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     flex-direction: column;
     width: 300px;
     height: 409px;
@@ -1018,7 +1044,7 @@ body {
     background-position: center center;
     background-color: $color-main--dark;
     border-radius: 3px;
-    transition: all 0.3s;
+    transition: box-shadow, background-color, color 0.3s;
 
     &:focus {
       box-shadow: 0px 0px 0px 4px $color-main--light;
@@ -1037,7 +1063,7 @@ body {
   &__bottom {
     display: flex;
     justify-content: space-between;
-    margin: 0 18px 18px;
+    margin: auto 18px 18px;
   }
 
   &__count {
@@ -1050,6 +1076,7 @@ body {
     height: 24px;
     background-color: $color-main--lighter;
     text-align: center;
+    transition: box-shadow 0.3s;
   }
 
   &__button {
@@ -1084,6 +1111,7 @@ body {
     gap: 30px;
     transition: all 0.5s;
   }
+
   &__slider-item {
     height: 300px;
     padding: 76px 32px;
@@ -1092,7 +1120,6 @@ body {
     border-radius: 6px;
     flex: 1;
     transition: all 0.5s;
-    cursor: pointer;
   }
 
   &__slider--active {
@@ -1107,10 +1134,6 @@ body {
     }
   }
 
-  // &__slider-item:not(:last-child) {
-  //   margin-right: 30px;
-  // }
-
   &__slider-descr {
     display: block;
     @extend %opensans-700;
@@ -1121,6 +1144,7 @@ body {
   }
 
   &__slider-title {
+    max-width: 346px;
     @extend %ruda-600;
     font-size: 30px;
     margin-bottom: 12px;
@@ -1178,50 +1202,5 @@ body {
     height: 16px;
   }
 }
-
-// .slick {
-//   &-slide:not(:last-child) {
-//     margin-right: 30px;
-//   }
-
-//   &-active {
-//     color: $color-text-second;
-//     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.25);
-//     .top__slider-title {
-//       text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
-//     }
-//     .top__slider-link {
-//       border-color: $color-text-second;
-//     }
-//   }
-// }
-
-// &__new-price {
-// }
-
-// .top__product-list {
-// }
-// .top__item {
-// }
-
-// .top__bottom {
-// }
-
-// .top__cart {
-// }
-// .top__button {
-// }
-// .top__slider {
-// }
-// .top__slider-list {
-// }
-// .top__slider-item {
-// }
-// .top__slider-descr {
-// }
-// .top__slider-title {
-// }
-// .top__slider-link {
-// }
 
 @import "media";

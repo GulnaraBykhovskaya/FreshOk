@@ -1,16 +1,8 @@
-const slides = document.querySelectorAll(".top__slider-item");
-
-for (const slide of slides) {
-  slide.addEventListener("click", () => {
-    slide.classList.add("top__slider--active");
-  });
-}
-
 $(function () {
   $(".slider").slick({
     fade: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
     prevArrow:
       '<button type="button" class="slick-prev"><img src="images/icons/arrow-left.svg" alt="Левая стрелка"></button>',
     nextArrow:
