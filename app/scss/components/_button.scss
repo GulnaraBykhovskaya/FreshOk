@@ -1,0 +1,39 @@
+.button {
+  display: block;
+  padding: 12px 24px;
+  background-color: $color-main--dark;
+  border-radius: 6px;
+  color: $color-text-second;
+  transition: box-shadow, background-color 0.3s;
+  &--show {
+    margin: 0 auto 72px;
+    border: 1px solid $color-main--dark;
+    background-color: $color-text-second;
+    color: $color-main--dark;
+
+    &:focus {
+      box-shadow: 0px 0px 0px 4px #63a60e80;
+    }
+
+    &:hover {
+      background-color: $color-main--lighter;
+    }
+
+    &:active {
+      box-shadow: inset 0px 10px 4px #0000001a;
+    }
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 4px $color-main--light;
+  }
+
+  &:hover {
+    background-color: $color-btn--hover;
+  }
+
+  &:active {
+    color: rgba(#ffffff, 0.5);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}

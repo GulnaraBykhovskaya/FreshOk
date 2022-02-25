@@ -1,0 +1,30 @@
+.payment {
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  &__link {
+    display: block;
+    height: 29px;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &--visa {
+      width: 93px;
+      background-image: url("../images/icons/visa.svg");
+      @extend %bg;
+    }
+
+    &--master {
+      width: 49px;
+      background-image: url("../images/icons/mastercard.svg");
+      @extend %bg;
+    }
+  }
+}

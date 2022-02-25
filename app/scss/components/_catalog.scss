@@ -1,0 +1,118 @@
+.catalog {
+  position: relative;
+  padding: 15px 38px 15px 60px;
+  width: 240px;
+  background-color: $color-text-second;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: $color-main--dark;
+  transition: all 0.3s;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover {
+    background-color: $color-main--light;
+    border-radius: 6px 6px 0px 0px;
+  }
+
+  &:hover .catalog__arrow {
+    transform: rotate(180deg);
+  }
+
+  &:hover ul {
+    display: block;
+  }
+
+  &__burger {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    display: block;
+    height: 1px;
+    width: 20px;
+    background-color: $color-main--dark;
+  }
+
+  &__burger::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 25px;
+    height: 1px;
+    background-color: $color-main--dark;
+  }
+
+  &__burger::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 25px;
+    height: 1px;
+    background-color: $color-main--dark;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 23px;
+    right: 19px;
+    @extend %bg;
+    background-image: url("../images/icons/arrow.svg");
+    width: 8px;
+    height: 4px;
+    transition: transform 0.3s;
+  }
+
+  &__list {
+    min-width: 240px;
+    position: absolute;
+    top: 49px;
+    left: 0;
+    background-color: $color-text-second;
+    border: 1px solid $silver-bright;
+    border-radius: 0px 0px 6px 6px;
+    display: none;
+  }
+
+  &__item {
+    transition: border-left color 0.3s;
+    &:hover {
+      border-left: 3px solid $color-main--dark;
+      color: $color-main--dark;
+    }
+  }
+
+  &__item:not(:last-child) {
+    border-bottom: 1px solid $silver-bright;
+  }
+
+  &__link {
+    display: block;
+    padding: 15px 24px;
+    height: 49px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $color-title;
+    transition: border-left, color 0.3s;
+  }
+
+  &__link:focus {
+    border: 3px solid $color-main--light;
+  }
+
+  &__link:hover {
+    border-left: 3px solid $color-main--dark;
+    color: $color-main--dark;
+  }
+
+  &__link:active {
+    color: $silver-bright;
+  }
+
+  &.catalog__list--active {
+    transform: translateY(0);
+  }
+}

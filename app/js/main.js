@@ -9,7 +9,7 @@ $(function () {
       '<button type="button" class="slick-next"><img src="images/icons/arrow-right.svg" alt="Праввая стрелка"></button>',
   });
 
-  $(".navigation__link--cart, .cart-list__close").on("click", function () {
+  $(".navigation__btn--cart, .cart-list__close").on("click", function () {
     $(".cart-list ").toggleClass("cart-list--active");
   });
 

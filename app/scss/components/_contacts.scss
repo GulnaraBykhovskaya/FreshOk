@@ -1,0 +1,17 @@
+.contacts {
+  &__link {
+    color: inherit;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 18px;
+  }
+
+  &__list {
+    margin-bottom: 18px;
+  }
+}

@@ -1,0 +1,51 @@
+.service {
+  background-color: $silver-light;
+  &__wrap {
+    padding: 48px 186px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 6px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 74px;
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    @extend %bg;
+  }
+
+  &__item--shipment::before {
+    background-image: url("../images/icons/shipment.svg");
+  }
+
+  &__item--return::before {
+    background-image: url("../images/icons/return.svg");
+  }
+
+  &__item--support::before {
+    background-image: url("../images/icons/support.svg");
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 52px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $color-title;
+  }
+}
