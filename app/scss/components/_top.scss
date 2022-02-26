@@ -109,35 +109,6 @@
     @extend %badge-sale;
   }
 
-  &__like {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    width: 44px;
-    height: 44px;
-    padding: 9px 6px;
-    margin-bottom: 3px;
-    border-radius: 3px;
-    transition: all 0.3s;
-
-    &:hover {
-      path {
-        fill: $color-like--hover;
-      }
-    }
-
-    &:focus {
-      box-shadow: 0px 0px 0px 3px $color-main--light;
-    }
-
-    &:active {
-      path {
-        fill: $color-like--hover;
-        opacity: 0.5;
-      }
-    }
-  }
-
   &__img {
     @extend %bg;
     margin-bottom: 18px;
